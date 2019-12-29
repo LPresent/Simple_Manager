@@ -213,7 +213,7 @@ class DBFrame extends JFrame implements ActionListener{
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery("SELECT * FROM tabs");
 				strArray = new ArrayList<String>();
-				for(int i=0; rs.next();i++){
+				while(rs.next()){
 					strArray.add(rs.getString(1));
 				}
 				String[] selections = strArray.toArray(new String[strArray.size()]);
@@ -279,7 +279,7 @@ class DBFrame extends JFrame implements ActionListener{
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery("SELECT * FROM tabs");
 				strArray = new ArrayList<String>();
-				for(int i=0; rs.next();i++){
+				while(rs.next()){
 					strArray.add(rs.getString(1));
 				}
 				String[] selections = strArray.toArray(new String[strArray.size()]);
